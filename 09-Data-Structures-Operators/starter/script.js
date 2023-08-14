@@ -27,3 +27,30 @@ const restaurant = {
     },
   },
 };
+
+
+// create new array
+
+const mainMenuCopy = [...restaurant.mainMenu];
+
+
+// join two array
+const newMenu = [...restaurant.mainMenu, ...restaurant.starterMenu]
+
+
+// iterable: string, mpas, sets. NOT object!
+const str = 'Johnnas';
+const letters = [...str, '', 'S.']
+console.log(letters)
+
+// apply ... to object
+
+const newResuaurant = {foundYr: 1998, ...restaurant}
+
+console.log(newResuaurant)
+
+// REST the array
+
+const [a, b, ...other] = [1,2,3,4,5]
+
+console.log(other)

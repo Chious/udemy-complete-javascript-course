@@ -468,6 +468,7 @@ BONUS: Create an object called 'scorers' which contains the names of the players
 GOOD LUCK 😀
 */
 
+
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -508,6 +509,34 @@ const game = {
     team2: 6.5,
   },
 };
+
+// Code Challenge #2 Ans
+
+//1
+
+
+//for (let i = 0; i<game.scored.length; i++){
+//  console.log(`player${i + 1}: ${game["scored"][i]}`);
+//}
+
+//2
+
+
+const odds  = Object.values(game.odds);
+let average = 0;
+for (let odd of odds) average += odd;
+average /= odds.length;
+
+//3
+
+let description = ["victory Bayern Munich", "draw", "victory Borrusia Dortmund"]
+for (let i = 0; i < odds.length; i++){
+  console.log(`Odd of ${description[i]}: ${odds[i]}`)
+}
+
+///////////////////////////////////////
+
+
 
 /*
 // 1.
@@ -631,8 +660,40 @@ Suppose we get data from a web service about a certain game (below). In this cha
 
 TEST DATA FOR 6: Use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'. Then, call the function again with players from game.scored
 
+
+
 GOOD LUCK 😀
 */
+
+//1
+const [players1,players2] = game.players;
+
+
+//2
+let [team1gk, ...others] = [players1[1], ...players1]
+
+//3
+const allPlayers = [...players1,...players2]
+
+
+//4 
+const players1Final = [ 'Thiago', 'Coutinho', 'Perisic', ...players1]
+
+//5
+
+const { team1, x:draw, team2} = game.odds
+
+//6
+
+const printGoals = function(...players){
+  console.log(players)
+  console.log(`${players.length} goals were scored`)
+}
+
+//printGoals('Davies', 'Muller')
+
+
+
 
 /*
 // 1.
