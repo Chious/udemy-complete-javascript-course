@@ -73,13 +73,13 @@ addEventListener('click', function(){
 })
 
 // Styles
-message.style.backgroundColor = '#37383d';
-message.style.width = '120%';
+// message.style.backgroundColor = '#37383d';
+// message.style.width = '120%';
 
 message.style.height = 
  Number.parseFloat(getComputedStyle(message).height, 10) + '30px';
 
-document.documentElement.style.setProperty('--color-primary', 'orangered');
+// document.documentElement.style.setProperty('--color-primary', 'orangered');
 
 // Attributes
 const logo = document.querySelector('.nav__logo');
@@ -95,3 +95,34 @@ console.log(logo.getAttribute('designer'))
 // logo.classList.remove();
 // logo.classList.toggle();
 // logo.classList.contains();
+
+// Scrolling function
+
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+btnScrollTo.addEventListener('click', function(e){
+  const s1coords = section1.getBoundingClientRect();
+  
+  // Scrolling
+  //window.scrollTo(
+  //  s1coords.left + window.pageXOffset,
+  //  s1coords.top + window.pageYOffset);
+
+  // window.scrollTo(s1coords.left, s1coords.top);
+  //window.scrollTo({
+  //  left: s1coords.left + window.pageXOffset,
+  //  top: s1coords.top + window.pageYOffset,
+  //  behavior: 'smooth'})
+
+  section1.scrollIntoView({behavior: 'smooth'})
+})
+
+
+const h1 = document.querySelector('h1');
+
+// h1.addEventListener('mouseenter', function(e){
+//   alert("hello");
+// })
+
+h1.onmouseenter = function(e){ alert("hello");};
